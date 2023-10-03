@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function BeerDetailsPage() {
@@ -10,7 +10,6 @@ function BeerDetailsPage() {
   useEffect(() => {
     axios.get(import.meta.env.VITE_API_URL + '/' + beerId).then((response) => {
       setBeer(response.data);
-      console.log(beer);
     });
   }, []);
 
